@@ -4,7 +4,7 @@ import KPIWidget from "../components/KPIWidget";
 import { Coffee, Truck, Leaf } from "lucide-react";
 
 export default function HomeScreen() {
-  const name = "Ayush"; // read from profile.json optionally
+  const name = "Shikha"; // read from profile.json optionally
   const kpis = [
     { label: "EXI", value: "78.4", note: "Experience Index" },
     { label: "Funnel", value: "63%", note: "Digital Funnel" },
@@ -22,7 +22,7 @@ export default function HomeScreen() {
             </div>
           </div>
           <div className="w-12 h-12 bg-white rounded-xl card-shadow flex items-center justify-center">
-            <div className="text-slate-600">A</div>
+            <div className="text-slate-600">{`${name[0]}`}</div>
           </div>
         </div>
 

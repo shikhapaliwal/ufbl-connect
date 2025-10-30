@@ -14,14 +14,14 @@ export default function WalletScreen() {
               <span className="text-sm text-slate-500">Coins</span>
             </div>
           </div>
-          <div className="p-3 bg-white rounded-xl shadow">
+          <div className="p-3 bg-white rounded-xl soft">
             <svg width="20" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M4 7h16v10H4z" stroke="#3A3A3A" strokeWidth="1.2" />
             </svg>
           </div>
         </div>
 
-        <div className="mt-6 bg-white rounded-2xl p-3 shadow">
+        <div className="mt-6 bg-white rounded-2xl p-3 soft">
           <div className="flex items-center justify-between">
             <div className="text-sm font-semibold">ESG Badges</div>
             <div className="text-xs text-slate-400">
@@ -40,7 +40,7 @@ export default function WalletScreen() {
           </div>
         </div>
 
-        <div className="mt-4 bg-white rounded-2xl p-3 shadow">
+        <div className="mt-4 bg-white rounded-2xl p-3 soft">
           <div className="text-sm font-semibold">Redeem</div>
           <div className="mt-2 grid gap-2">
             {wallet.redemptions.map((r) => (
@@ -49,7 +49,10 @@ export default function WalletScreen() {
                 className="flex items-center justify-between p-3 rounded-lg border"
               >
                 <div className="text-xs">{r}</div>
-                <button className="text-xs px-3 py-1 rounded-full bg-white shadow">
+                <button
+                  onClick={() => alert(`Redeemed mock reward: ${r}`)}
+                  className="text-xs px-3 py-1 rounded-full bg-white soft"
+                >
                   Redeem
                 </button>
               </div>
@@ -59,8 +62,11 @@ export default function WalletScreen() {
 
         <div className="mt-4">
           <div className="text-sm font-semibold mb-2">Activity</div>
-          <div className="bg-white rounded-2xl p-3 shadow text-xs">
+          <div className="bg-white rounded-2xl p-3 soft">
             <LineChart />
+            <div className="text-xs text-slate-500 mt-2">
+              Simple trend — static demo
+            </div>
           </div>
         </div>
       </div>

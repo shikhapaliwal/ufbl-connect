@@ -18,7 +18,7 @@ export default function ProfileDashboard() {
           </div>
           <div className="flex items-center gap-2">
             <div className="text-xs text-slate-500">Mode</div>
-            <div className="bg-white p-1 rounded-full shadow">
+            <div className="bg-white p-1 rounded-full soft">
               <button
                 onClick={() =>
                   setMode(mode === "Customer" ? "Manager" : "Customer")
@@ -33,13 +33,13 @@ export default function ProfileDashboard() {
 
         {mode === "Customer" ? (
           <div className="mt-6 space-y-3">
-            <div className="bg-white rounded-2xl p-4 shadow">
+            <div className="bg-white rounded-2xl p-4 soft">
               <div className="text-sm font-semibold">Loyalty Tier</div>
               <div className="text-xs text-slate-500 mt-2">
                 Gold • 12 months
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-4 shadow">
+            <div className="bg-white rounded-2xl p-4 soft">
               <div className="text-sm font-semibold">Recent Activity</div>
               <div className="text-xs text-slate-500 mt-2">
                 Booked: Chef Table • Earned 60 coins
@@ -60,7 +60,8 @@ export default function ProfileDashboard() {
                 note="Capital Elasticity"
               />
             </div>
-            <div className="mt-2 bg-white rounded-2xl p-4 shadow">
+
+            <div className="mt-2 bg-white rounded-2xl p-4 soft">
               <div className="flex items-center justify-between">
                 <div className="text-sm font-semibold">
                   Digital Funnel Health
@@ -73,7 +74,8 @@ export default function ProfileDashboard() {
                 Quick view of conversion & engagement — static demo
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-4 shadow">
+
+            <div className="bg-white rounded-2xl p-4 soft">
               <div className="flex items-center justify-between">
                 <div className="text-sm font-semibold">Sustainability ROI</div>
                 <div className="text-xs text-slate-500">

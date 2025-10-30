@@ -16,7 +16,6 @@ export default function SplashScreen() {
     >
       <div className="flex flex-col items-center gap-4">
         <div className="w-28 h-28 bg-white rounded-full card-shadow flex items-center justify-center animate-fadeIn">
-          {/* If you have a logo, show it; else show text */}
           {logo ? (
             <img src={logo} alt="UFBL" className="w-20 h-20 object-contain" />
           ) : (
@@ -28,8 +27,11 @@ export default function SplashScreen() {
             </div>
           )}
         </div>
-        <div className="text-center text-slate-700 opacity-90 animate-fadeIn">
-          Experience · Order · Earn
+        <div
+          className="text-center text-slate-700 opacity-90 animate-fadeIn"
+          style={{ animationDelay: "160ms" }}
+        >
+          <div className="text-sm">Experience · Order · Earn</div>
         </div>
       </div>
     </div>

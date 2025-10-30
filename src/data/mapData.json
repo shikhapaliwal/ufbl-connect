@@ -1,30 +1,42 @@
 [
   {
     "id": 1,
-    "name": "Barbeque Nation - Mumbai",
-    "lat": 19.07,
-    "lng": 72.88,
-    "type": "dinein"
+    "name": "Mumbai Central Kitchen",
+    "type": "cloud",
+    "lat": 19.076,
+    "lng": 72.8777,
+    "rating": 4.5,
+    "address": "Lower Parel, Mumbai",
+    "image": "/src/assets/badges/mumbai.jpg"
   },
   {
     "id": 2,
-    "name": "GrillCloud - Delhi (CK)",
-    "lat": 28.61,
-    "lng": 77.2,
-    "type": "cloud"
+    "name": "Delhi Hybrid Hub",
+    "type": "hybrid",
+    "lat": 28.6139,
+    "lng": 77.209,
+    "rating": 4.2,
+    "address": "Connaught Place, Delhi",
+    "image": "/src/assets/badges/delhi.jpg"
   },
   {
     "id": 3,
-    "name": "BQ Hybrid Hub - Bangalore",
-    "lat": 12.97,
-    "lng": 77.59,
-    "type": "hybrid"
+    "name": "Bangalore Dine-In",
+    "type": "dinein",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "rating": 4.7,
+    "address": "Indiranagar, Bangalore",
+    "image": "/src/assets/badges/bangalore.jpg"
   },
   {
     "id": 4,
-    "name": "Sustain Kitchen - Pune",
-    "lat": 18.52,
-    "lng": 73.85,
-    "type": "hybrid"
+    "name": "Pune Cloud Kitchen",
+    "type": "cloud",
+    "lat": 18.5204,
+    "lng": 73.8567,
+    "rating": 4.4,
+    "address": "Koregaon Park, Pune",
+    "image": "/src/assets/badges/pune.jpg"
   }
 ]

@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap");
 @import "tailwindcss";
 
-/* Global theme */
+/* Theme variables */
 :root {
   --bg: #fff9f3;
   --accent: #f16623;
@@ -16,15 +17,19 @@ body,
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, Manrope, system-ui, -apple-system, "Segoe UI", Roboto,
+  font-family: "Inter", "Manrope", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "ss01" on;
 }
 
-/* Small rounded / shadow utilities (presentation) */
+/* Shadows & cards */
 .card-shadow {
-  box-shadow: 0 6px 18px rgba(58, 58, 58, 0.06);
+  box-shadow: 0 8px 20px rgba(58, 58, 58, 0.06);
+}
+.soft {
+  box-shadow: 0 4px 12px rgba(58, 58, 58, 0.04);
 }
 
 /* Animations */
@@ -48,7 +53,6 @@ body {
     transform: translateY(0);
   }
 }
-
 .animate-fadeIn {
   animation: ufblFadeIn 0.48s ease both;
 }
@@ -56,7 +60,16 @@ body {
   animation: ufblSlideUp 0.36s cubic-bezier(0.2, 0.9, 0.3, 1) both;
 }
 
-/* Small helpers */
+/* Spacing helpers */
 .bottom-spacer {
-  padding-bottom: 84px;
+  padding-bottom: 92px;
 } /* avoid nav overlap on pages */
+
+/* Utility tweaks for mobile visuals */
+img.rounded-cover {
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+button:active {
+  transform: translateY(1px);
+}

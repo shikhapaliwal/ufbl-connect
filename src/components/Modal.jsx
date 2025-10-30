@@ -1,29 +1,18 @@
 import React from "react";
-import { X } from "lucide-react";
 
-export default function Modal({
-  open = true,
-  title = "",
-  children,
-  onClose = () => {},
-}) {
-  if (!open) return null;
+export default function Modal({ isOpen, onClose, children }) {
+  if (!isOpen) return null;
+
   return (
-    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
-      <div className="absolute inset-0 bg-black/30" onClick={onClose}></div>
-      <div className="relative w-full max-w-md mx-4 bg-white rounded-2xl shadow-xl p-4 animate-slideUp">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-white rounded-2xl p-4 w-[90%] max-w-md shadow-lg relative">
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 text-slate-400 hover:text-[#F16623]"
+          className="absolute top-3 right-3 text-gray-500 hover:text-black"
         >
-          <X size={18} />
+          ✕
         </button>
-        {title && (
-          <div className="text-lg font-semibold text-[#3A3A3A] mb-2">
-            {title}
-          </div>
-        )}
-        <div>{children}</div>
+        {children}
       </div>
     </div>
   );
