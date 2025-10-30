@@ -1,17 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  background-color: #fff9f3;
-  color: #3a3a3a;
-  font-family: "Inter", "Manrope", sans-serif;
+/* Global theme */
+:root {
+  --bg: #fff9f3;
+  --accent: #f16623;
+  --text: #3a3a3a;
 }
 
-@keyframes fadeInUp {
+/* page background & font */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Manrope, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Small rounded / shadow utilities (presentation) */
+.card-shadow {
+  box-shadow: 0 6px 18px rgba(58, 58, 58, 0.06);
+}
+
+/* Animations */
+@keyframes ufblFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ufblSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -20,5 +50,13 @@ body {
 }
 
 .animate-fadeIn {
-  animation: fadeInUp 0.3s ease-out forwards;
+  animation: ufblFadeIn 0.48s ease both;
 }
+.animate-slideUp {
+  animation: ufblSlideUp 0.36s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+/* Small helpers */
+.bottom-spacer {
+  padding-bottom: 84px;
+} /* avoid nav overlap on pages */

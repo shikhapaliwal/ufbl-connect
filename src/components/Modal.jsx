@@ -1,33 +1,29 @@
+import React from "react";
 import { X } from "lucide-react";
 
-export default function Modal({ title, onClose }) {
+export default function Modal({
+  open = true,
+  title = "",
+  children,
+  onClose = () => {},
+}) {
+  if (!open) return null;
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50 animate-fadeIn">
-      <div className="bg-white w-11/12 max-w-sm rounded-2xl p-6 shadow-lg relative">
+    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
+      <div className="absolute inset-0 bg-black/30" onClick={onClose}></div>
+      <div className="relative w-full max-w-md mx-4 bg-white rounded-2xl shadow-xl p-4 animate-slideUp">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-[#F16623]"
+          className="absolute right-3 top-3 text-slate-400 hover:text-[#F16623]"
         >
-          <X size={20} />
+          <X size={18} />
         </button>
-
-        <h3 className="text-lg font-semibold text-[#3A3A3A] mb-2">
-          Confirm Booking
-        </h3>
-        <p className="text-sm text-gray-600 mb-6">
-          You’re about to book <span className="font-medium">{title}</span>.
-          Proceed to confirm your slot and enjoy your exclusive discount.
-        </p>
-
-        <button
-          onClick={() => {
-            alert(`Booking confirmed for ${title}! 🎉`);
-            onClose();
-          }}
-          className="bg-[#F16623] w-full text-white py-2 rounded-full font-medium hover:bg-[#e2571b] transition-colors"
-        >
-          Confirm Booking
-        </button>
+        {title && (
+          <div className="text-lg font-semibold text-[#3A3A3A] mb-2">
+            {title}
+          </div>
+        )}
+        <div>{children}</div>
       </div>
     </div>
   );

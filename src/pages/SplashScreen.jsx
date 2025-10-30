@@ -1,21 +1,37 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function SplashScreen() {
-  const navigate = useNavigate();
-
+  const nav = useNavigate();
   useEffect(() => {
-    const timer = setTimeout(() => navigate("/home"), 2000);
-    return () => clearTimeout(timer);
-  }, [navigate]);
+    const t = setTimeout(() => nav("/home"), 2000);
+    return () => clearTimeout(t);
+  }, [nav]);
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-[#FFF9F3]">
-      <img src={logo} alt="UFBL Logo" className="w-28 animate-fadeIn" />
-      <p className="text-[#3A3A3A] mt-4 text-lg font-medium opacity-80 animate-fadeIn delay-500">
-        Experience · Order · Earn
-      </p>
+    <div
+      className="min-h-screen flex items-center justify-center"
+      style={{ background: "var(--bg)" }}
+    >
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-28 h-28 bg-white rounded-full card-shadow flex items-center justify-center animate-fadeIn">
+          {/* If you have a logo, show it; else show text */}
+          {logo ? (
+            <img src={logo} alt="UFBL" className="w-20 h-20 object-contain" />
+          ) : (
+            <div
+              className="text-2xl font-extrabold"
+              style={{ color: "var(--accent)" }}
+            >
+              UFBL
+            </div>
+          )}
+        </div>
+        <div className="text-center text-slate-700 opacity-90 animate-fadeIn">
+          Experience · Order · Earn
+        </div>
+      </div>
     </div>
   );
 }

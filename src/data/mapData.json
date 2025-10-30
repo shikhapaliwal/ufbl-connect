@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Barbeque Nation - Mumbai",
+    "lat": 19.07,
+    "lng": 72.88,
+    "type": "dinein"
+  },
+  {
+    "id": 2,
+    "name": "GrillCloud - Delhi (CK)",
+    "lat": 28.61,
+    "lng": 77.2,
+    "type": "cloud"
+  },
+  {
+    "id": 3,
+    "name": "BQ Hybrid Hub - Bangalore",
+    "lat": 12.97,
+    "lng": 77.59,
+    "type": "hybrid"
+  },
+  {
+    "id": 4,
+    "name": "Sustain Kitchen - Pune",
+    "lat": 18.52,
+    "lng": 73.85,
+    "type": "hybrid"
+  }
+]

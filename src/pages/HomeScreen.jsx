@@ -1,21 +1,63 @@
+import React from "react";
 import Card from "../components/Card";
+import KPIWidget from "../components/KPIWidget";
+import { Coffee, Truck, Leaf } from "lucide-react";
 
 export default function HomeScreen() {
-  const cards = [
-    { title: "Dine-In Experiences", color: "bg-orange-100" },
-    { title: "Delivery Brands", color: "bg-yellow-100" },
-    { title: "Sustainability Hub", color: "bg-green-100" },
+  const name = "Ayush"; // read from profile.json optionally
+  const kpis = [
+    { label: "EXI", value: "78.4", note: "Experience Index" },
+    { label: "Funnel", value: "63%", note: "Digital Funnel" },
+    { label: "SROI", value: "12.6%", note: "Sustainability ROI" },
   ];
 
   return (
-    <div className="flex flex-col items-center pt-10 pb-20 px-4 space-y-5">
-      <h2 className="text-xl font-semibold text-[#3A3A3A]">
-        Good Evening, Ayush 👋
-      </h2>
+    <div className="min-h-screen pb-28 bottom-spacer">
+      <div className="max-w-md mx-auto px-4 pt-8">
+        <div className="flex justify-between items-center">
+          <div>
+            <div className="text-sm text-slate-600">Good Evening,</div>
+            <div className="text-xl font-semibold">
+              {`Good Evening, ${name} `} <span>👋</span>
+            </div>
+          </div>
+          <div className="w-12 h-12 bg-white rounded-xl card-shadow flex items-center justify-center">
+            <div className="text-slate-600">A</div>
+          </div>
+        </div>
 
-      {cards.map((card) => (
-        <Card key={card.title} title={card.title} color={card.color} />
-      ))}
+        <div className="mt-6 grid gap-4">
+          <Card
+            title="Dine-In Experiences"
+            subtitle="Curated in-restaurant journeys"
+            to="/experiences"
+            icon={<Coffee size={18} />}
+          />
+          <Card
+            title="Delivery Brands"
+            subtitle="Cloud kitchens & delivery"
+            to="/map"
+            icon={<Truck size={18} />}
+          />
+          <Card
+            title="Sustainability Hub"
+            subtitle="ESG initiatives & rewards"
+            to="/wallet"
+            icon={<Leaf size={18} />}
+          />
+        </div>
+
+        <div className="mt-8">
+          <h3 className="text-sm font-medium text-slate-700">
+            Today’s highlights
+          </h3>
+          <div className="mt-3 flex gap-3 overflow-x-auto pb-2">
+            {kpis.map((k) => (
+              <KPIWidget key={k.label} {...k} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

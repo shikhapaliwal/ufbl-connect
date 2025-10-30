@@ -1,11 +1,15 @@
-export default function LineChart() {
+import React from "react";
+
+/* Very simple SVG line chart (static mock) */
+export default function LineChart({ width = "100%", height = 60 }) {
   return (
-    <svg viewBox="0 0 100 40" className="w-full h-24 text-[#F16623]">
+    <svg viewBox="0 0 100 40" className="w-full h-24">
       <polyline
         fill="none"
-        stroke="currentColor"
+        stroke="#F16623"
         strokeWidth="3"
-        points="0,30 20,20 40,25 60,10 80,15 100,5"
+        strokeLinecap="round"
+        points="0,30 15,22 30,25 45,12 60,18 75,8 90,14 100,6"
       />
     </svg>
   );

@@ -1,0 +1,6 @@
+{
+  "coins": 240,
+  "badges": ["Zero Waste", "Local Sourcing"],
+  "redemptions": ["10% off Dine-In", "Free Delivery"],
+  "activity": [5, 8, 12, 18, 20, 24]
+}
