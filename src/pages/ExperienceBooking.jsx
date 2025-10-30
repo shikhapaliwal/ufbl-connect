@@ -6,6 +6,7 @@ import experiencesList from "../data/experiences.json";
 export default function ExperienceBooking() {
   const location = useLocation();
   const prefillKitchen = location.state?.prefill || null;
+  const kitchenImages = location.state?.kitchenImages || null;
 
   const [selected, setSelected] = useState(null);
   const [prefillInfo, setPrefillInfo] = useState(prefillKitchen);
@@ -28,7 +29,7 @@ export default function ExperienceBooking() {
             <div className="flex items-center gap-3">
               {prefillInfo.image ? (
                 <img
-                  src={prefillInfo.image}
+                  src={kitchenImages[prefillInfo.image]}
                   alt={prefillInfo.name}
                   className="w-14 h-14 rounded-cover"
                 />

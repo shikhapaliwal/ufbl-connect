@@ -7,6 +7,14 @@ import mapData from "../data/mapData.json";
 import Modal from "../components/Modal";
 import TransitionWrapper from "../components/TransitionWrapper";
 
+const kitchenImages = import.meta.glob(
+  "/src/assets/kitchens/*.{jpg,jpeg,png,svg}",
+  {
+    eager: true,
+    import: "default",
+  }
+);
+
 const iconColors = { dinein: "#16a34a", hybrid: "#eab308", cloud: "#3b82f6" };
 const createIcon = (color) =>
   L.divIcon({
@@ -23,6 +31,7 @@ export default function SmartKitchenMap() {
     filter === "all" ? true : m.type === filter
   );
   const defaultCenter = [20.5937, 78.9629];
+  console.log(Object.keys(kitchenImages));
 
   return (
     <div className="min-h-screen pb-28 bottom-spacer">
@@ -89,7 +98,7 @@ export default function SmartKitchenMap() {
           <div>
             {selected.image && (
               <img
-                src={selected.image}
+                src={kitchenImages[selected.image]}
                 alt={selected.name}
                 className="w-full h-40 rounded-cover"
               />
@@ -113,7 +122,12 @@ export default function SmartKitchenMap() {
                 </button>
                 <button
                   onClick={() => {
-                    navigate("/experiences", { state: { prefill: selected } });
+                    navigate("/experiences", {
+                      state: {
+                        prefill: selected,
+                        kitchenImages: kitchenImages,
+                      },
+                    });
                   }}
                   className="px-3 py-2 rounded-lg bg-[linear-gradient(90deg,#F16623,#ff8a4d)] text-white text-sm"
                 >
