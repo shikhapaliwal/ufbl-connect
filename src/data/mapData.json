@@ -7,7 +7,7 @@
     "lng": 72.8777,
     "rating": 4.5,
     "address": "Lower Parel, Mumbai",
-    "image": "./src/assets/kitchens/mumbai.jpg"
+    "image": "/src/assets/kitchens/mumbai.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "lng": 77.209,
     "rating": 4.2,
     "address": "Connaught Place, Delhi",
-    "image": "./src/assets/kitchens/delhi.jpg"
+    "image": "/src/assets/kitchens/delhi.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "lng": 77.5946,
     "rating": 4.7,
     "address": "Indiranagar, Bangalore",
-    "image": "./src/assets/kitchens/bangalore.jpg"
+    "image": "/src/assets/kitchens/bangalore.jpg"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "lng": 73.8567,
     "rating": 4.4,
     "address": "Koregaon Park, Pune",
-    "image": "./src/assets/kitchens/pune.jpg"
+    "image": "/src/assets/kitchens/pune.jpg"
   }
 ]
