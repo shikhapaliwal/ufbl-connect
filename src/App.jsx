@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import SplashScreen from "./pages/SplashScreen";
 import HomeScreen from "./pages/HomeScreen";
 import SmartKitchenMap from "./pages/SmartKitchenMap";
@@ -16,7 +22,7 @@ function AppLayout() {
     <div className="min-h-screen">
       <Routes>
         <Route path="/splash" element={<SplashScreen />} />
-        <Route path="/" element={<SplashScreen />} />
+        <Route path="/" element={<Navigate to="/splash" replace />} />
         <Route path="/home" element={<HomeScreen />} />
         <Route path="/map" element={<SmartKitchenMap />} />
         <Route path="/experiences" element={<ExperienceBooking />} />
@@ -32,7 +38,7 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ufbl-connect">
       <AppLayout />
     </BrowserRouter>
   );
